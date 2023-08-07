@@ -149,8 +149,71 @@ p1 = Person()
 
 try:
     print(p1.__count) # It will throw error as __count can not be extract outside the class
+except Exception as e:
+    print(e)
 finally:
     p1.display()
+
+
+# Abstraction
+# it is a way to hide the internal working of a function from user
+# user can know only the basic implemetation of a function, but won't be able to know the internal workings
+# user can know what a function does, but can't know how it does
+# Abstract class can be considered as blue print for other classed
+
+# In Python, Abstraction can be achieved by using abstract classes and interfaces
+# If a class contains, one or more abstract methods, then it is called as abstract class
+# Abstract class can be inherited by other class, and the abstract methods can get their definition in other class
+
+from abc import ABC, abstractmethod # python provides ABC class for abstraction
+class Car(ABC): # abstract base class by inheriting ABC class
+
+    @abstractmethod
+    def gear(self): # it is an abstract method
+        pass
+    #An abstract class can contain both normal and abstract method
+    def mileage(self): # it is a normal method (not abstract method)
+        print("Default mileage is 15Kmph")
+
+# in python, we need to use ABC class in order to make the base for defining a abstract base class
+# to define abstract method, we need to use @abstractmethod decorator
+# if a child class doesn;t implement the abstract method of the parent class,
+# then it automatically becomes an abstract class
+
+class Maruti(Car): # it becomes an abstract class, as it have not implemented the gear method(abstract method)
+    def mileage(self):
+        print("Mileage is 22 Kmph")
+
+class Tesla(Car):
+    def gear(self): #abstract method gets the definition here
+        print("It has 6 gears")
+
+class BMW(Car):
+    def gear(self): #abstract method gets the definition here
+        print("It has 5 gears")
+
+t = Tesla()
+t.gear()
+
+b = BMW()
+b.gear()
+
+try:
+    c = Car()
+    #it will throw error,
+    # as abstract class can't be instantiated, means we can't create object of abstract class
+    c.mileage()
+except Exception as e:
+    print(e)
+
+try:
+    m = Maruti()
+    #it will throw error,
+    # as abstract class can't be instantiated, means we can't create object of abstract class
+    m.mileage()
+except Exception as e:
+    print(e)
+
 
 
 
