@@ -9,9 +9,16 @@ class Employee:
     def display(self): #method is a function associated with an object
         print("Hi", self.emp_id, self.bu)
 
+    def __str__(self):
+        return "This is a employee Object"
+
+# self is used to refer the current object
+
 
 e1 = Employee(429877, 'FSDC') #an instance of the class # constructor called
 e1.display() #method is associated with e1 object
+print(e1) # when we try to print a object,
+# then __str__() method is getting invoked (by default it is there, we can override it)
 
 #built-in class methods
 
@@ -215,6 +222,12 @@ except Exception as e:
     print(e)
 
 
+
+# All string, integer, list etc are objects in python
+
+# Encapsulation
+# It is the concept of binding data and methods together that can work within a single unit
+# It can be achieved through Class
 
 
 
