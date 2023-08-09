@@ -1,3 +1,7 @@
+# Interpreted Language: Python does not require compilation,
+# allowing rapid development and testing. It uses Interpreter instead of Compiler.
+
+
 # List
 # List is a collection of various data types
 # It is mutable
