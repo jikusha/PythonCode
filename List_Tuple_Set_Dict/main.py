@@ -21,6 +21,39 @@ d = [32,78,4]
 print(max(d))
 print(min(d))
 
+b.append([7,8]) # it will always add new elements to the end of the list
+print(b)
+
+b.insert(2, "Biki") #postion and value
+print(b)
+
+b.insert(0, 9)
+print(b)
+
+b.extend([9,"Jiks", (8,)]) # this will add multiple elements at the same time to the end of the list
+print(b)
+
+# Note: append() and extend() methods can only add elements at the end
+
+# reverse a list
+b.reverse()
+print(b)
+
+# reversed returns a reverse iterator which can be convert into list using list()
+b_rev = list(reversed([12,13,14,15]))
+print(b_rev)
+
+# remove
+l = [1,1,4,5,6,5]
+l.remove(1) # removes the first occurance of element 1
+print(l)
+
+# pop
+l.pop(0) # removes element from a particular index
+print(l)
+
+l.pop() # removes element from last
+print(l)
 
 
 # Tuple
@@ -64,3 +97,10 @@ print(a+b) # concatenation
 
 print(dir(a)) # Tuple build in methods # less
 print(dir([])) # List build in methods # more
+
+
+
+# List Comprehensions
+nums = [4,5,6,7]
+n = [x**2 for x in nums]
+print(n)
