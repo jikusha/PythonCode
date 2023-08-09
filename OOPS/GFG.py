@@ -239,7 +239,7 @@ print(s3.age)
 # these are utility type methods
 # neither belongs to class, nor to objects
 # they know nothing about the class state
-# we define it withing the class, so that it will be associated with the class and other take get the benifit of this method
+# we define it withing the class, so that it will be associated with the class and other take get the benefit of this method
 
 class Math:
     @staticmethod
