@@ -108,3 +108,127 @@ print(dir([])) # List build in methods # more
 nums = [4,5,6,7]
 n = [x**2 for x in nums]
 print(n)
+
+
+
+# set
+# unordered collection of items # elemts are not in a specific order
+# removes duplicate element
+# each element in set must be unique
+# it is mutable, means we can modify the items after creation
+# element can't be accessed via index
+
+
+s = {'Jiku', 'Biki', 'Manjit', 'Biki', 'Bankim', 'Jiku'}
+print(s)
+for i in s:
+    print(i)
+
+s = set(['Jiku', 'Biki', 'Manjit', 'Biki', 'Bankim', 'Jiku'])
+print(s)
+
+s = set(('Jiku', 'Biki', 'Manjit', 'Biki', 'Bankim', 'Jiku'))
+print(s)
+
+
+# all the elements of a set need to be immutable like int, float, string and tuple
+# list can't be a element in set # as it is mutable
+
+s = {1,1.3,1,"Jiku", (5,"Biku")} # all elements are immutable
+print(s)
+
+# s = {1,1.3,1,"Jiku", [5,"Biku"]} # it will throw error, as list is mutable
+# print(s)
+
+s = {}  # this will create a empty dictionary
+print(type(s))
+
+s = set() # this will create a empty set
+print(type(s))
+
+
+# add
+s = {1,1.3,1,"Jiku", (5,"Biku")}
+s.add(13)
+print(s)
+
+# update for adding multiple elements
+s.update([7,8,9])
+print(s)
+
+s.update(("CGI", "Amazon"))
+print(s)
+
+s.update([(9,78)])
+print(s)
+
+
+# discard and remove
+
+s.discard(9)
+print(s)
+
+s.discard(99) # 99 doesn't exists, set will remain unchanged
+print(s)
+
+s.remove(1.3)
+print(s)
+
+# s.remove(99) # 99 doesn't exists, it will throw error
+print(s)
+
+# clear
+s.clear() # removes all the set items
+print(s)
+
+
+# union
+s1 = {1,2,3}
+s2 = {2,3,4}
+s3 = {3,4,5}
+
+print(s1.union(s2,s3))
+
+print(s1.intersection(s2))
+print(s1.intersection(s3))
+print(s2.intersection(s3))
+
+print(s1.difference(s2))
+print(s2.difference(s3))
+
+print(len(s1))
+
+
+# frozenSet
+# It is a immutable version of set
+# its elements can't be modified
+# It can be used as an element of other set or dictionary keys as it is immutable
+# It is hashable, as its elements can't be modified. So hash value of the elements will remain constant.
+
+fs = frozenset([1,1,3,4,"jiku", "Mango", 90, (8,9), frozenset([9,0])])
+print(fs)
+for i in fs:
+    print(i)
+
+# add and update will not work in frozenSet as it is immutable
+# discard and remove will also not work
+
+# if we pass a dictionary inside a frozen set
+
+fs1 = frozenset({54:"Jiku", 35:"kamal", 40:"Adarsh" })
+print(fs1) # it will take the keys of the dictionary
+
+
+s1 = {1,2,3}
+s2 = {2,3,1}
+s3 = {1,4,5,3,2,8}
+
+print(s1==s2) # it will check if both sets are equal, irrespective of order
+print(s1!=s2) # it will check if both sets are not equal
+print(s1!=s3) # it will check if both sets are not equal
+print(s1<s3) # it will check if left set is a proper subset of the right (right have additional elements also)
+print(s3>s2) # it will check if left set is a proper superset of the right (left have additional elements also)
+print(s1<=s3) # left is a subset of right
+print(s3>=s1) # left is a superset of right
+print(s1<=s2) # equal
+print(s1>=s2) # equal
