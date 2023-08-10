@@ -232,3 +232,81 @@ print(s1<=s3) # left is a subset of right
 print(s3>=s1) # left is a superset of right
 print(s1<=s2) # equal
 print(s1>=s2) # equal
+
+
+# dictionary
+# it is a type of data structure where elements are stored as key-value pair
+# value can be anything
+# keys should be unique
+# keys must be a immutable python object
+# after python 3.7 dictionaries are ordered
+
+d = {'name': 'Jiku', 'age':25}
+print(d)
+
+# another way to create a dict
+
+d1 = dict([(54, 'Jiku'),(41, 'Sitesh'), (35, 'Kamal')])
+print(d1)
+
+# to access the values we can use keys as index
+print(d1[54])
+print(d1[35])
+
+# dictionary is mutable. so its values can be changed, added
+
+d1[35] = 'Pandey' # updated if key already exists
+d1[55] = 'Swapnil' # will add a new key-value pair
+
+print(d1)
+
+d1[(8,9)] = "Tuple" # Tuple as a key
+print(d1)
+
+# d1[[8,9]] = "Tuple" # List as a key # error
+
+
+# delete elements
+
+del d1[(8,9)] # deleting elements by key
+
+print(d1)
+
+del d # deleting entire dictionary
+
+d1.pop(55) # deleting element by pop using key
+print(d1)
+
+
+# iterating a dict
+
+for k in d1:
+    print(k) # it will print all keys
+    print(d1[k]) # it will print all values
+
+for v in d1.values():
+    print(v) # values
+
+for x in d1.items():
+    print(x) # it will print all the items in tuple form
+
+for k,v in d1.items():
+    print(k,v) # key and value
+
+
+d2 = {1: 'A', 2: 'B', 1: 'a'} # we are assigning multiple values for the same key
+print(d2) # it will take the last assigned value for key 1
+
+print(len(d1))
+
+d2.clear() # it will empty out the dict
+print(d2)
+
+d3 = d1.copy() # it will return a shallow copy
+print(d3)
+print(d1)
+
+print(d1.get(54))
+d1.update({54: "Jiku Sandilya"})
+d1.update({14: "Subal"})
+print(d1)
